@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#fffaf3" />
+  <meta name="description" content="You are invited to the wedding of Alvin Ewe and Janice Ko on 12 September 2026." />
+  <title>Alvin Ewe & Janice Ko Wedding Invitation</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Cormorant+Garamond:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --sun: #d4a373;
+      --sage: #8da399;
+      --cream: #fffaf3;
+      --ivory: #fffdf8;
+      --ink: #3f372f;
+      --muted: #7d7166;
+      --line: rgba(212, 163, 115, 0.35);
+      --glass: rgba(255, 250, 243, 0.72);
+      --shadow: 0 18px 45px rgba(80, 60, 40, 0.12);
+      --soft-shadow: 0 10px 30px rgba(70, 50, 35, 0.10);
+      --radius: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      letter-spacing: 0.02em;
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', 'Songti SC', serif; /* Chinese elegant Kai style */
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(212, 163, 115, 0.18), transparent 34%),
+        radial-gradient(circle at bottom right, rgba(141, 163, 153, 0.18), transparent 38%),
+        var(--cream);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .no-wrap {
+      white-space: nowrap;
+      word-break: keep-all;
+      overflow-wrap: normal;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(34px);
+      transition: opacity 0.9s ease, transform 0.9s ease;
+      will-change: opacity, transform;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .reveal-delay-1 {
+      transition-delay: 0.12s;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: min(920px, calc(100% - 32px));
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 22px;
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      border-radius: 999px;
+      background: var(--glass);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 12px 35px rgba(60, 45, 35, 0.10);
+    }
+
+    .nav-brand {
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 1.28rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .nav-links a {
+      transition: color 0.25s ease;
+      white-space: nowrap;
+    }
+
+    .nav-links a:hover {
+      color: var(--sun);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 24px 70px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(rgba(34, 28, 24, 0.26), rgba(34, 28, 24, 0.22)),
+        url('https://i.postimg.cc/25Vv4HNs/SGB21886-0217.jpg') center/cover no-repeat;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(255, 250, 243, 0.02) 0%,
+        rgba(255, 250, 243, 0.25) 60%,
+        rgba(255, 250, 243, 0.85) 85%,
+        rgba(255, 250, 243, 1) 100%
+      );
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: min(980px, 100%);
+      color: #fffdf8;
+      text-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+    }
+
+    .kicker {
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: clamp(1.05rem, 2.4vw, 1.45rem);
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .couple-name {
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: clamp(2.8rem, 9vw, 6.5rem);
+      font-weight: 500;
+      line-height: 1.05;
+      letter-spacing: 0.04em;
+      margin-bottom: 26px;
+    }
+
+    .couple-name span {
+      display: block;
+    }
+
+    /* subtle offset for editorial feel */
+    .couple-name span:first-child {
+      transform: translateX(-8px);
+    }
+
+    .couple-name span:last-child {
+      transform: translateX(8px);
+    }
+
+    .couple-name .amp {
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      letter-spacing: 0.2em;
+      margin: 6px 0;
+    }
+
+    .tagline {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      letter-spacing: 0.04em;
+      margin-bottom: 42px;
+      font-style: italic;
+      opacity: 0.96;
+    }
+
+    .tagline span:first-child {
+      font-size: 1.2em;
+      letter-spacing: 0.18em;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+
+    .tagline span:last-child {
+      font-size: 0.95em;
+      opacity: 0.9;
+      letter-spacing: 0.08em;
+    }
+
+    .date-pill {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 12px 24px;
+      border: 1px solid rgba(255, 255, 255, 0.48);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 1.28rem;
+      letter-spacing: 0.12em;
+      margin-bottom: 34px;
+    }
+
+    /* Countdown */
+    .countdown-wrap {
+      width: min(820px, 100%);
+      margin: 0 auto;
+      padding: 10px;
+    }
+
+    .countdown {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .time-card {
+      position: relative;
+      min-height: 118px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      border-radius: 24px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: var(--soft-shadow);
+      color: var(--ink);
+      overflow: hidden;
+    }
+
+    .time-card::before {
+      content: '';
+      position: absolute;
+      inset: 1px;
+      border-radius: 23px;
+      border: 1px solid rgba(255, 255, 255, 0.76);
+      pointer-events: none;
+    }
+
+    .time-card::after {
+      content: '';
+      position: absolute;
+      top: 20%;
+      right: 0;
+      width: 1px;
+      height: 60%;
+      background: linear-gradient(to bottom, transparent, rgba(212, 163, 115, 0.58), transparent);
+    }
+
+    .time-card:last-child::after {
+      display: none;
+    }
+
+    .time-number {
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: clamp(2.45rem, 7vw, 4.1rem);
+      font-weight: 600;
+      line-height: 1;
+      color: var(--sun);
+    }
+
+    .time-label {
+      margin-top: 9px;
+      font-size: 0.82rem;
+      letter-spacing: 0.16em;
+      color: var(--sage);
+    }
+
+    /* Sections */
+    section {
+      padding: 88px 24px;
+    }
+
+    .container {
+      width: min(1040px, 100%);
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-heading span {
+      display: block;
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--sage);
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      letter-spacing: 0.04em;
+      font-size: clamp(1.75rem, 4vw, 2.7rem);
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .about-card,
+    .v-card,
+    .rsvp-card {
+      background: rgba(255, 253, 248, 0.84);
+      border: 1px solid rgba(255, 255, 255, 0.75);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+    }
+
+    .about-card {
+      padding: clamp(28px, 5vw, 58px);
+      text-align: center;
+    }
+
+    .about-photo {
+      width: min(480px, 100%);
+      margin: 0 auto 28px;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 14px 34px rgba(70, 50, 35, 0.10);
+      border: 1px solid rgba(255, 255, 255, 0.82);
+    }
+
+    .about-photo img {
+      width: 100%;
+      display: block;
+      filter: brightness(0.98) contrast(0.98) saturate(0.94);
+    }
+
+    .about-card p {
+      line-height: 2.08;
+      margin-bottom: 16px;
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 760px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .about-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .v-card {
+      width: min(620px, 100%);
+      margin: 0 auto;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .v-card-top {
+      padding: 38px 30px;
+      text-align: center;
+      background:
+        linear-gradient(135deg, rgba(212, 163, 115, 0.18), rgba(141, 163, 153, 0.16)),
+        rgba(255, 255, 255, 0.45);
+    }
+
+    .v-card-top h3 {
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 2.2rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .v-card-body {
+      padding: 34px 30px 38px;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--sage);
+      font-weight: 600;
+      letter-spacing: 0.08em;
+    }
+
+    .info-value {
+      color: var(--ink);
+    }
+
+    .map-button,
+    .submit-button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--sun), #c89060);
+      color: #fffdf8;
+      padding: 13px 24px;
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 0.96rem;
+      cursor: pointer;
+      box-shadow: 0 12px 28px rgba(212, 163, 115, 0.28);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.25s ease;
+    }
+
+    .map-button:hover,
+    .submit-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 34px rgba(212, 163, 115, 0.34);
+    }
+
+    .submit-button:disabled {
+      cursor: not-allowed;
+      opacity: 0.72;
+      transform: none;
+    }
+
+    /* RSVP */
+    .rsvp-card {
+      width: min(720px, 100%);
+      margin: 0 auto;
+      padding: clamp(28px, 5vw, 46px);
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .field label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.88rem;
+      letter-spacing: 0.08em;
+      color: var(--sage);
+      font-weight: 600;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      border: 1px solid rgba(212, 163, 115, 0.35);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 14px 16px;
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 1rem;
+      color: var(--ink);
+      outline: none;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--sun);
+      box-shadow: 0 0 0 4px rgba(212, 163, 115, 0.14);
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder {
+      color: rgba(125, 113, 102, 0.55);
+    }
+
+    .field textarea {
+      min-height: 110px;
+      resize: vertical;
+    }
+
+    .submit-row {
+      text-align: center;
+      margin-top: 28px;
+    }
+
+    .submit-note {
+      letter-spacing: 0.04em;
+      margin-top: 14px;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    .success-message {
+      display: none;
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(141, 163, 153, 0.14);
+      color: var(--sage);
+      text-align: center;
+      font-weight: 600;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(141, 163, 153, 0.22);
+    }
+
+    .success-message.show {
+      display: block;
+      animation: successRise 0.75s ease both;
+    }
+
+    .success-icon {
+      width: 46px;
+      height: 46px;
+      margin: 0 auto 10px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--sun);
+      box-shadow: 0 10px 26px rgba(70, 50, 35, 0.10);
+      animation: successPop 0.65s ease both;
+    }
+
+    .success-message strong {
+      display: block;
+      color: var(--ink);
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 1.35rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 2px;
+    }
+
+    .success-sparkle {
+      position: absolute;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: rgba(212, 163, 115, 0.68);
+      box-shadow: 0 0 16px rgba(212, 163, 115, 0.5);
+      animation: sparkleFloat 1.8s ease-in-out infinite;
+      pointer-events: none;
+    }
+
+    .success-sparkle:nth-child(1) { top: 18px; left: 16%; animation-delay: 0s; }
+    .success-sparkle:nth-child(2) { top: 42px; right: 18%; animation-delay: 0.25s; }
+    .success-sparkle:nth-child(3) { bottom: 24px; left: 28%; animation-delay: 0.45s; }
+
+    @keyframes successRise {
+      from {
+        opacity: 0;
+        transform: translateY(16px) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    @keyframes successPop {
+      0% { transform: scale(0.72); opacity: 0; }
+      70% { transform: scale(1.08); opacity: 1; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes sparkleFloat {
+      0%, 100% { transform: translateY(0) scale(1); opacity: 0.45; }
+      50% { transform: translateY(-8px) scale(1.25); opacity: 1; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .success-message.show,
+      .success-icon,
+      .success-sparkle {
+        animation: none;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 40px 24px 54px;
+      color: var(--muted);
+      font-family: 'EB Garamond', 'Cormorant Garamond', 'KaiTi', 'STKaiti', serif;
+      font-size: 1.12rem;
+      letter-spacing: 0.12em;
+    }
+
+    footer .footer-tagline {
+      display: block;
+      margin-top: 10px;
+      font-size: 0.95rem;
+      opacity: 0.85;
+      letter-spacing: 0.08em;
+    }
+
+    iframe[name="hidden_iframe"] {
+      display: none;
+    }
+
+    @media (max-width: 720px) {
+      .nav {
+        top: 12px;
+        padding: 11px 14px;
+        gap: 10px;
+      }
+
+      .nav-brand {
+        font-size: 1.02rem;
+        letter-spacing: 0.04em;
+      }
+
+      .nav-links {
+        gap: 10px;
+        font-size: 0.75rem;
+      }
+
+      .hero {
+        padding: 108px 16px 58px;
+      }
+
+      .tagline {
+        max-width: 330px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .date-pill {
+        font-size: 1.04rem;
+        padding: 10px 18px;
+      }
+
+      .countdown {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+      }
+
+      .time-card {
+        min-height: 104px;
+        border-radius: 21px;
+      }
+
+      .time-card:nth-child(2)::after,
+      .time-card:last-child::after {
+        display: none;
+      }
+
+      section {
+        padding: 68px 18px;
+      }
+
+      .info-row {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .v-card-body {
+        padding: 28px 22px 32px;
+      }
+
+      .no-wrap {
+        white-space: nowrap;
+        font-size: clamp(0.88rem, 3.75vw, 1rem);
+      }
+    }
+
+    @media (max-width: 390px) {
+      .nav-links {
+        font-size: 0.68rem;
+        gap: 7px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="nav" aria-label="Wedding navigation">
+    <a class="nav-brand" href="#home">A & J</a>
+    <div class="nav-links">
+      <a href="#about">About Us</a>
+      <a href="#details">Wedding Details</a>
+      <a href="#rsvp">RSVP</a>
+      <a href="#blessings">Blessings</a>
+    </div>
+  </nav>
+
+  <header id="home" class="hero">
+    <div class="hero-content reveal is-visible">
+      <div class="kicker">Together, Always</div>
+      <h1 class="couple-name">
+        <span>Alvin Ewe</span>
+        <span class="amp">&amp;</span>
+        <span>Janice Ko</span>
+      </h1>
+      <p class="tagline">
+        <span>#EweKOedMe</span><br>
+        <span>晋夜芯光 · 共赴良辰</span>
+      </p>
+      <div class="date-pill">12 · 09 · 2026&nbsp;&nbsp;|&nbsp;&nbsp;1800H</div>
+
+      <div class="countdown-wrap" aria-label="Countdown to wedding">
+        <div class="countdown">
+          <div class="time-card">
+            <div id="days" class="time-number">00</div>
+            <div class="time-label">DAYS</div>
+          </div>
+          <div class="time-card">
+            <div id="hours" class="time-number">00</div>
+            <div class="time-label">HOURS</div>
+          </div>
+          <div class="time-card">
+            <div id="minutes" class="time-number">00</div>
+            <div class="time-label">MINUTES</div>
+          </div>
+          <div class="time-card">
+            <div id="seconds" class="time-number">00</div>
+            <div class="time-label">SECONDS</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="about">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>About Us</span>
+          <h2>关于我们</h2>
+        </div>
+
+        <div class="about-card reveal reveal-delay-1">
+          <div class="about-photo">
+            <img src="https://i.postimg.cc/sx3Q6zN0/SGB21886-0272.jpg" alt="Alvin Ewe and Janice Ko" loading="lazy">
+          </div>
+          <p>
+            In the gentle rhythm of life, our paths have become one. As we embark on this new chapter together, we invite you to witness the wedding of Alvin Ewe and Janice Ko, and share in a day filled with love, joy, and heartfelt blessings.
+          </p>
+          <p>
+            在时光流转之中，我们的故事悄然走向圆满，我们将携手展开新的章节。诚挚邀请您莅临见证尤子晋与高可芯的婚礼盛典，与我们一同分享这份爱、喜悦与祝福。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="details">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Wedding Details</span>
+          <h2>婚礼详情</h2>
+        </div>
+
+        <article class="v-card reveal reveal-delay-1">
+          <div class="v-card-top">
+            <h3>Wedding Ceremony</h3>
+          </div>
+          <div class="v-card-body">
+            <div class="info-row">
+              <div class="info-label">Date 日期</div>
+              <div class="info-value no-wrap">12/09/2026</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">Time 时间</div>
+              <div class="info-value no-wrap">06:00 PM</div>
+            </div>
+            <div class="info-row">
+              <div class="info-label">Address 地点</div>
+              <div class="info-value">
+                <span class="no-wrap">Elite House 贵宾楼大酒家</span><br>
+                <a class="map-button" href="https://maps.app.goo.gl/V16c7YPKF9KbaTRU7" target="_blank" rel="noopener">📍 View Map 查看地图</a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="rsvp">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>RSVP</span>
+          <h2>出席回函</h2>
+        </div>
+
+        <form
+          id="rsvpForm"
+          class="rsvp-card reveal reveal-delay-1"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSe0vMDKBHsijLDy6twQ5PFVOCZoObaUkUrLMOAinLkEgpLdmQ/formResponse"
+          method="POST"
+          target="hidden_iframe"
+          accept-charset="UTF-8"
+          enctype="application/x-www-form-urlencoded"
+          onsubmit="return handleSubmit()"
+        >
+          <input type="hidden" name="fvv" value="1">
+          <input type="hidden" name="draftResponse" value="[]">
+          <input type="hidden" name="pageHistory" value="0">
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="guestName">Name 姓名</label>
+              <input id="guestName" name="entry.1904606633" type="text" autocomplete="name" placeholder="Your name" required>
+            </div>
+
+            <div class="field">
+              <label for="relationship">Relationship with Couple 与新人的关系</label>
+              <select id="relationship" name="entry.167184973" required>
+                <option value="" selected disabled>请选择</option>
+                <option value="Groom's Relatives 男方家人亲戚">Groom's Relatives 男方家人亲戚</option>
+                <option value="Groom's Friends 男方好友">Groom's Friends 男方好友</option>
+                <option value="Bride's Relatives 女方家人亲戚">Bride's Relatives 女方家人亲戚</option>
+                <option value="Bride's Friends 女方好友">Bride's Friends 女方好友</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="attendance">Kindly confirm your attendance 敬请确认是否出席</label>
+              <select id="attendance" name="entry.262660603" required>
+                <option value="" selected disabled>请选择</option>
+                <option value="Yes, I will be able to attend 欣然出席">Yes, I will be able to attend 欣然出席</option>
+                <option value="Regretfully, unable to attend 否">Regretfully, unable to attend 否</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="guestCount">Guests 参加人数</label>
+              <input id="guestCount" name="entry.904556580" type="number" min="1" step="1" inputmode="numeric" placeholder="1" required>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button id="submitButton" class="submit-button" type="submit">Send RSVP 提交回函</button>
+          </div>
+
+          
+          <div id="successMessage" class="success-message" role="status" aria-live="polite">
+            <span class="success-sparkle"></span>
+            <span class="success-sparkle"></span>
+            <span class="success-sparkle"></span>
+            <div class="success-icon" aria-hidden="true">✓</div>
+            <strong>RSVP Received</strong>
+            <span>Your RSVP has been submitted. 已收到您的回函，谢谢您的祝福。</span>
+          </div>
+        </form>
+
+        <iframe name="hidden_iframe" id="hidden_iframe" title="Hidden RSVP submission frame"></iframe>
+      </div>
+    </section>
+  
+    <section id="blessings">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Blessings</span>
+          <h2>Blessings to Couple 给新人的祝福</h2>
+        </div>
+
+        <div class="rsvp-card reveal reveal-delay-1" style="margin-bottom:20px;">
+          <p class="submit-note" style="margin-top:0;margin-bottom:20px;">Leave your blessings here. You may write your name or remain anonymous.</p>
+          <div class="form-grid">
+            <div class="field">
+              <label for="blessName">Name 名字（可匿名）</label>
+              <input id="blessName" type="text" placeholder="Optional">
+            </div>
+
+            <div class="field">
+              <label for="blessMessage">Message 留言</label>
+              <textarea id="blessMessage" placeholder="Write your blessings..."></textarea>
+            </div>
+          </div>
+
+          <div class="submit-row">
+            <button id="blessingButton" class="submit-button" type="button" onclick="addBlessing()">Send Blessing 发送祝福</button>
+          </div>
+        </div>
+
+        <div id="blessingsStatus" class="submit-note" style="display:none;"></div>
+        <div id="blessingsBoard" class="reveal reveal-delay-1" style="display:grid;gap:14px;"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    Alvin Ewe &amp; Janice Ko · 12 September 2026<br>
+    #EweKOedMe / 晋夜芯光 · 共赴良辰
+  </footer>
+
+  <script>
+    'use strict';
+
+    const weddingDate = new Date('2026-09-12T18:00:00');
+
+    function pad(number) {
+      return String(number).padStart(2, '0');
+    }
+
+    function updateCountdown() {
+      const ids = ['days', 'hours', 'minutes', 'seconds'];
+      const elements = ids.map((id) => document.getElementById(id));
+
+      if (elements.some((element) => !element)) {
+        return;
+      }
+
+      const now = new Date();
+      const diff = weddingDate - now;
+
+      if (diff <= 0) {
+        elements.forEach((element) => {
+          element.textContent = '00';
+        });
+        return;
+      }
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById('days').textContent = pad(days);
+      document.getElementById('hours').textContent = pad(hours);
+      document.getElementById('minutes').textContent = pad(minutes);
+      document.getElementById('seconds').textContent = pad(seconds);
+    }
+
+    function initializeRevealAnimations() {
+      const revealElements = document.querySelectorAll('.reveal');
+
+      if (!('IntersectionObserver' in window)) {
+        revealElements.forEach((element) => element.classList.add('is-visible'));
+        return;
+      }
+
+      const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.16,
+        rootMargin: '0px 0px -60px 0px'
+      });
+
+      revealElements.forEach((element) => revealObserver.observe(element));
+    }
+
+    const rsvpForm = document.getElementById('rsvpForm');
+    const submitButton = document.getElementById('submitButton');
+    const successMessage = document.getElementById('successMessage');
+    const hiddenIframe = document.getElementById('hidden_iframe');
+    let formSubmitted = false;
+
+    function resetSubmitButton() {
+      submitButton.disabled = false;
+      submitButton.textContent = 'Send RSVP 提交回函';
+      formSubmitted = false;
+    }
+
+    function handleSubmit() {
+      formSubmitted = true;
+      successMessage.classList.remove('show');
+      submitButton.disabled = true;
+      submitButton.textContent = 'Submitting 提交中...';
+      return true;
+    }
+
+    hiddenIframe.addEventListener('load', () => {
+      if (!formSubmitted) {
+        return;
+      }
+
+      successMessage.classList.add('show');
+      successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      submitButton.textContent = 'Submitted 已提交';
+      rsvpForm.reset();
+      setTimeout(resetSubmitButton, 2500);
+    });
+
+    function runSelfTests() {
+      const expectedAction = 'https://docs.google.com/forms/d/e/1FAIpQLSe0vMDKBHsijLDy6twQ5PFVOCZoObaUkUrLMOAinLkEgpLdmQ/formResponse';
+      const expectedFields = [
+        'entry.1904606633',
+        'entry.167184973',
+        'entry.262660603',
+        'entry.904556580'
+      ];
+
+      console.assert(rsvpForm instanceof HTMLFormElement, 'RSVP form exists');
+      console.assert(rsvpForm.action === expectedAction, 'Google Form action URL is correct');
+      console.assert(rsvpForm.method.toLowerCase() === 'post', 'RSVP form uses POST');
+      console.assert(rsvpForm.target === 'hidden_iframe', 'RSVP form targets hidden iframe');
+
+      expectedFields.forEach((fieldName) => {
+        console.assert(Boolean(rsvpForm.querySelector(`[name="${fieldName}"]`)), `Field exists: ${fieldName}`);
+      });
+
+      console.assert(!document.body.textContent.includes('bgMusic'), 'Background music code removed');
+      console.assert(!document.body.textContent.includes('musicToggle'), 'Music toggle code removed');
+      console.assert(Boolean(document.querySelector('#successMessage .success-icon')), 'Animated RSVP success icon exists');
+      console.assert(Boolean(document.getElementById('blessingsBoard')), 'Blessings board exists');
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+    initializeRevealAnimations();
+    
+    // Shared Blessings Wall
+    // To make this live for all guests, deploy the Google Apps Script provided in the chat
+    // and paste the Web App URL below.
+    const BLESSINGS_API_URL = 'https://script.google.com/macros/s/AKfycbxAVGe1jILQPYCZ-VhaNSTBUQaZ_3dYFoByIS3dEQZYpvf0K2Vp2tktT0sZUQoFG64chQ/exec';
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function setBlessingsStatus(message) {
+      const status = document.getElementById('blessingsStatus');
+      status.textContent = message;
+      status.style.display = message ? 'block' : 'none';
+    }
+
+    async function addBlessing() {
+      const nameInput = document.getElementById('blessName');
+      const messageInput = document.getElementById('blessMessage');
+      const blessingButton = document.getElementById('blessingButton');
+      const name = nameInput.value.trim() || 'Anonymous 匿名';
+      const message = messageInput.value.trim();
+
+      if (!message) {
+        setBlessingsStatus('Please write a blessing before sending. 请先写下祝福。');
+        return;
+      }
+
+      blessingButton.disabled = true;
+      blessingButton.textContent = 'Sending 发送中...';
+      setBlessingsStatus('');
+
+      try {
+        if (BLESSINGS_API_URL) {
+          await fetch(BLESSINGS_API_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ name, message, createdAt: new Date().toISOString() })
+          });
+        } else {
+          const blessings = JSON.parse(localStorage.getItem('blessings') || '[]');
+          blessings.unshift({ name, message, createdAt: new Date().toISOString() });
+          localStorage.setItem('blessings', JSON.stringify(blessings));
+        }
+
+        nameInput.value = '';
+        messageInput.value = '';
+        setBlessingsStatus('Blessing sent. 祝福已送出。');
+        await renderBlessings();
+      } catch (error) {
+        console.error(error);
+        setBlessingsStatus('Unable to send now. Please try again later. 暂时无法发送，请稍后再试。');
+      } finally {
+        blessingButton.disabled = false;
+        blessingButton.textContent = 'Send Blessing 发送祝福';
+      }
+    }
+
+    async function loadSharedBlessings() {
+      if (!BLESSINGS_API_URL) {
+        return JSON.parse(localStorage.getItem('blessings') || '[]');
+      }
+
+      const response = await fetch(BLESSINGS_API_URL, { method: 'GET' });
+      if (!response.ok) {
+        throw new Error('Unable to load blessings');
+      }
+      return response.json();
+    }
+
+    async function renderBlessings() {
+      const container = document.getElementById('blessingsBoard');
+      try {
+        const blessings = await loadSharedBlessings();
+        container.innerHTML = blessings.length
+          ? blessings.map(b => `
+            <div style="padding:18px;border-radius:20px;background:rgba(255,253,248,0.82);box-shadow:var(--soft-shadow);border:1px solid rgba(255,255,255,0.72);">
+              <strong style="color:var(--sun);font-size:1.08rem;">${escapeHtml(b.name || 'Anonymous 匿名')}</strong>
+              <div style="margin-top:8px;color:var(--muted);line-height:1.9;">${escapeHtml(b.message || '')}</div>
+            </div>
+          `).join('')
+          : '<div style="padding:18px;text-align:center;color:var(--muted);">Be the first to leave a blessing. 成为第一个留下祝福的人。</div>';
+      } catch (error) {
+        console.error(error);
+        container.innerHTML = '<div style="padding:18px;text-align:center;color:var(--muted);">Unable to load blessings now. 暂时无法载入祝福。</div>';
+      }
+    }
+
+    renderBlessings();
+    runSelfTests();
+  </script>
+</body>
+</html>
